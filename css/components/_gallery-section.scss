@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+@use "sass:math";
+
+.gallery-section {
+  @extend %container;
+
+  .wrapper {
+    @include mix.wrap(60%, 70%, 100%, 0);
+    text-align: center;
+  }
+
+  //images layout
+  .images-container {
+    @include mix.flex(row, center, stretch, var.$gutter-tiny, wrap);
+    margin-bottom: var.$gutter-medium;
+  }
+
+  .image-box {
+    @include anim.appear;
+    flex-basis: calc(25% - var.$gutter-tiny);
+    aspect-ratio: 1;
+
+    @include breakpoint.laptop-m {
+      aspect-ratio: 2 / 2.5;
+    }
+
+    @include breakpoint.tablet {
+      aspect-ratio: 16 / 11;
+    }
+
+    @include breakpoint.mobile-l {
+      flex-basis: calc(50% - var.$gutter-tiny);
+      aspect-ratio: 16 / 7;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: var.$border-radius-tiny;
+    }
+  }
+
+  //button
+  .button {
+    @include anim.appear(view(600px 0));
+    @include mix.button;
+
+    &:hover {
+      @include mix.button-hover;
+    }
+  }
+}

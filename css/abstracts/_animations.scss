@@ -1,0 +1,17 @@
+@use "./variables" as var;
+@use "sass:math";
+
+/*the animation-timeline property is supported only on Chrome, Edge, Opera, Brave Browser, Chrome(for Android), Samsung Internet, Opera(mobile) and Android Browser*/
+@mixin appear($timeline: view(450px 0)) {
+  animation: appear 1s forwards;
+  animation-timeline: $timeline;
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

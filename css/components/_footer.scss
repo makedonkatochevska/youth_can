@@ -1,0 +1,104 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+@use "sass:math";
+
+footer {
+  @extend %container;
+  background-color: var.$background-color-primary;
+
+  .wrapper {
+    @include mix.wrap(60%, 70%, 100%, 0);
+  }
+
+  //title and subtitle  styles
+  h2 {
+    margin-bottom: var.$gutter-medium;
+  }
+
+  .subtitle {
+    @include anim.appear;
+    text-align: center;
+    margin-bottom: var.$gutter-big;
+    font-size: var.$font-size-small;
+  }
+
+  //footer content styles
+  .container-box {
+    @include mix.flex(row, center, stretch, var.$gutter-base);
+
+    @include breakpoint.mobile-l {
+      flex-direction: column;
+      gap: var.$gutter-big;
+    }
+  }
+
+  //content box
+  .content-box {
+    @include anim.appear(view(800px 0));
+    flex-basis: 50%;
+
+    ul {
+      margin-bottom: var.$gutter-big;
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: var.$gutter-small;
+    }
+
+    .working-time {
+      color: var.$text-color-secondary;
+      margin-bottom: var.$gutter-big;
+    }
+
+    .socials-container {
+      i {
+        background-color: var.$background-color-tertiary;
+        padding: var.$gutter-small;
+        border-radius: var.$border-radius-tiny;
+      }
+    }
+  }
+
+  //form box
+  .form-box {
+    @include anim.appear(view(800px 0));
+    flex-basis: 50%;
+
+    form {
+      @include mix.flex(column, center, stretch, var.$gutter-tiny);
+    }
+
+    input,
+    textarea {
+      background-color: var.$background-color-base;
+      padding: var.$gutter-small;
+      border: 1px solid #000;
+      border-radius: var.$border-radius-tiny;
+
+      &:focus {
+        outline: 1px solid #000;
+      }
+    }
+
+    textarea {
+      resize: none;
+      height: 20vh;
+    }
+
+    button {
+      @include mix.button(var.$border-radius-small, uppercase);
+
+      &:hover {
+        @include mix.button-hover(none);
+      }
+    }
+
+    .error-message {
+      color: var.$error-color;
+    }
+  }
+}

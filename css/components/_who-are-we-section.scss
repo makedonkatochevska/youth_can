@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+@use "sass:math";
+
+.who-are-we-section {
+  @extend %container;
+
+  .wrapper {
+    @include mix.wrap(80%, 100%);
+    @include mix.flex(row, center, center, var.$gutter-base);
+
+    @include breakpoint.mobile-l {
+      flex-direction: column;
+    }
+  }
+
+  .content-container {
+    flex-basis: 50%;
+
+    p {
+      @include anim.appear;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      text-align: left;
+      //overwrite to the property from common-elements because h2 are mostly center aligned.
+    }
+  }
+
+  .image-container {
+    flex-basis: 50%;
+
+    img {
+      @include anim.appear;
+      border-radius: var.$border-radius-base;
+    }
+  }
+}

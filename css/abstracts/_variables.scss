@@ -1,0 +1,71 @@
+@use "sass:math";
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+//Font settings
+$font-family-base: "Trebuchet MS", sans-serif;
+
+$font-size-tiny: rem-calc(10);
+$font-size-small: rem-calc(14);
+$font-size-base: rem-calc(16);
+$font-size-medium: rem-calc(18);
+$font-size-large: rem-calc(20);
+
+$heading-size-tiny: rem-calc(14);
+$heading-size-small: rem-calc(18);
+$heading-size-base: rem-calc(20);
+$heading-size-big: rem-calc(30);
+$heading-size-bigger: rem-calc(38);
+$heading-size-enormous: rem-calc(55);
+
+$line-height-base: 1.5;
+$line-height-small: 1.25;
+
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+// Size settings
+$gutter-base: rem-calc(30);
+$gutter-tiny: math.div($gutter-base, 6);
+$gutter-small: math.div($gutter-base, 3);
+$gutter-medium: math.div($gutter-base, 2);
+$gutter-big: $gutter-base * 1.5;
+$gutter-bigger: $gutter-base * 2;
+
+// Breakpoints
+$four-k: 2560px;
+$laptop-l: 1440px;
+$laptop-m: 1024px;
+$tablet: 768px;
+$mobile-l: 570px;
+$mobile-m: 375px;
+$mobile-s: 320px;
+$tablet-mobile-between: 600px;
+
+// Color settings
+$text-color-dark: #000;
+$text-color-light: #fff;
+$text-color-secondary: #bcb2b2;
+
+$background-color-base: #fff;
+$background-color-primary: #e4e4e4;
+$background-color-secondary: #192b6c;
+$background-color-tertiary: #bcb2b2;
+$background-color-quaternary: #bfbfbf;
+
+$light-blue-color: #0072ba;
+$yellow-color: #ffac33;
+$indicator-color: #959595;
+$indicator-color-active: darken(#959595, 20%);
+$error-color: rgb(245, 51, 51);
+
+// Border Radius
+$border-radius-base: 20px;
+$border-radius-small: 10px;
+$border-radius-tiny: 5px;
+$border-radius-circle: 50%;
+
+// Shadow
+$box-shadow-base: 0 2px 4px 2px rgba(0, 0, 0, 0.3);

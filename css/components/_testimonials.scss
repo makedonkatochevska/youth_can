@@ -1,0 +1,75 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+@use "sass:math";
+
+.testimonials-section {
+  @extend %container;
+
+  .wrapper {
+    @include mix.wrap(80%, 100%);
+  }
+
+  //testimonials layout
+  .carousel-inner {
+    @include anim.appear;
+    min-height: 30vh;
+    /*min-height so it does not change the height on the carousel inner based on how much text there is*/
+  }
+
+  .testimonial-container {
+    @include mix.flex(row, center, stretch, var.$gutter-base);
+
+    @include breakpoint.tablet {
+      flex-direction: column;
+    }
+
+    .inner-testimonial {
+      flex-basis: 50%;
+    }
+  }
+
+  //person info box
+  .person-info-box {
+    @include mix.flex(row, center, center, var.$gutter-small);
+  }
+
+  .image-box {
+    flex-basis: 10%;
+
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: var.$border-radius-circle;
+    }
+  }
+
+  .name-info-box {
+    flex-basis: 90%;
+
+    p {
+      font-weight: var.$font-weight-bold;
+      margin-bottom: 0;
+    }
+
+    i {
+      color: var.$yellow-color;
+    }
+  }
+
+  //carousel indicators
+  .carousel-indicators {
+    position: static;
+    margin-top: var.$gutter-base;
+    margin-bottom: 0;
+
+    button {
+      background-color: var.$indicator-color;
+
+      &:active {
+        background-color: var.$indicator-color-active;
+      }
+    }
+  }
+}

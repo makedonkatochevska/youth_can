@@ -1,0 +1,46 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+@use "sass:math";
+
+.vision-section {
+  @extend %container;
+
+  .wrapper {
+    @include mix.wrap(60%, 70%, 100%, 0);
+  }
+
+  //cards layout
+  .cards-container {
+    @include mix.flex(row, center, stretch, var.$gutter-medium);
+
+    @include breakpoint.mobile-l {
+      flex-direction: column;
+    }
+
+    //to make just the second card with gray background
+    .custom-card:nth-child(2) {
+      background-color: var.$background-color-primary;
+    }
+  }
+
+  .custom-card {
+    @include anim.appear;
+    flex-basis: 50%;
+    text-align: center;
+    padding: var.$gutter-medium;
+    border-radius: var.$border-radius-base;
+    box-shadow: var.$box-shadow-base;
+
+    i {
+      color: var.$background-color-secondary;
+      font-size: var.$heading-size-big;
+      margin-bottom: var.$gutter-small;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

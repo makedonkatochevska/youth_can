@@ -1,0 +1,84 @@
+@use "./variables" as var;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "sass:math";
+
+//container for padding
+%container {
+  padding-block: var.$gutter-big;
+
+  @include breakpoint.mobile-l {
+    padding-block: var.$gutter-base;
+  }
+}
+
+//wrapper
+/*the wrapper mixin contains 4 variables that change. In this project i use 2 scenario wraps, bigger and smaller:
+
+1.The bigger is with 80% width on bigger screens and 100% width from smaller laptops and below and the padding uses the default value that is gutter small. (the width for wrap-tablet uses the values that are used for the smaller laptops because it's the same with the bigger wrap.)
+
+2. The smaller wrap is with width 60% on bigger screens and 70% on smaller laptops and 100% for the tablet screen and the padding does not use the default value, but custom put that is 0 because the width of 70% on smaller laptops. */
+@mixin wrap(
+  $wrap-width,
+  $wrap-width-laptop-m,
+  $wrap-width-tablet: $wrap-width-laptop-m,
+  $wrap-padding-laptop-m: var.$gutter-small
+) {
+  width: $wrap-width;
+  margin-inline: auto;
+
+  @include breakpoint.laptop-m {
+    width: $wrap-width-laptop-m;
+    padding-inline: $wrap-padding-laptop-m;
+  }
+
+  @include breakpoint.tablet {
+    width: $wrap-width-tablet;
+    padding-inline: var.$gutter-small;
+  }
+}
+
+//button
+@mixin button($border-radius: 0, $text-transform: none) {
+  background-color: var.$background-color-secondary;
+  color: var.$text-color-light;
+  border-top-left-radius: var.$border-radius-small;
+  border-bottom-right-radius: var.$border-radius-small;
+  border-top-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  padding: var.$gutter-medium;
+  text-transform: $text-transform;
+  font-size: var.$font-size-small;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-medium;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in,
+    transform 0.3s ease-in;
+
+  @include breakpoint.tablet {
+    font-size: var.$font-size-base;
+  }
+}
+
+// button hover
+@mixin button-hover($transform-value: scale(1.1)) {
+  background-color: var.$light-blue-color;
+  color: var.$text-color-dark;
+  transform: $transform-value;
+}
+
+//flex
+@mixin flex(
+  $flex-direction,
+  $justify-content,
+  $align-items,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+  flex-wrap: $wrap;
+}

@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+@use "sass:math";
+
+.banner-section {
+  background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 0.5663515406162465) 56%,
+      rgba(0, 0, 0, 0.34506302521008403) 67%,
+      rgba(0, 0, 0, 0.2358193277310925) 77%,
+      rgba(0, 0, 0, 0.16299019607843135) 87%
+    ),
+    url("../images/banner.png") no-repeat top / cover fixed;
+
+  .wrapper {
+    @include mix.wrap(80%, 100%);
+    @extend %container;
+  }
+
+  .logo-navbar {
+    margin-bottom: var.$gutter-base;
+
+    img {
+      width: 100px;
+    }
+  }
+
+  .banner-content {
+    @include anim.appear(default);
+    width: 40%;
+    color: var.$text-color-light;
+
+    @include breakpoint.tablet {
+      width: 70%;
+    }
+
+    p {
+      margin-bottom: var.$gutter-base;
+    }
+  }
+
+  .button {
+    @include mix.button;
+
+    &:hover {
+      @include mix.button-hover;
+    }
+  }
+
+  .info-highlight {
+    i {
+      color: var.$light-blue-color;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

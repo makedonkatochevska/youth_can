@@ -1,0 +1,56 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+
+body {
+  font-family: var.$font-family-base;
+  font-size: var.$font-size-small;
+  font-weight: var.$font-weight-normal;
+  line-height: var.$line-height-base;
+
+  @include breakpoint.tablet {
+    font-size: var.$font-size-base;
+  }
+}
+
+h1 {
+  font-size: var.$heading-size-enormous;
+  line-height: var.$line-height-small;
+  margin-bottom: var.$gutter-medium;
+
+  @include breakpoint.tablet {
+    font-size: var.$heading-size-bigger;
+  }
+}
+
+h2 {
+  @include anim.appear;
+  font-size: var.$heading-size-bigger;
+  color: var.$text-color-dark;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-big;
+  text-align: center;
+}
+
+h3 {
+  font-size: var.$heading-size-big;
+  color: var.$text-color-dark;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-small;
+}
+
+h4 {
+  font-size: var.$heading-size-tiny;
+  color: var.$text-color-dark;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-base;
+}
+
+h5 {
+  font-size: var.$heading-size-base;
+  color: var.$text-color-dark;
+  font-weight: var.$font-weight-bold;
+  margin-bottom: var.$gutter-small;
+}

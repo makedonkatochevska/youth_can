@@ -1,0 +1,41 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/animations" as anim;
+@use "sass:math";
+
+.programs-section {
+  @extend %container;
+
+  .wrapper {
+    @include mix.wrap(80%, 100%);
+  }
+
+  //cards layout
+  .cards-container {
+    @include mix.flex(row, center, stretch, var.$gutter-medium);
+
+    @include breakpoint.tablet-mobile-between {
+      flex-direction: column;
+      gap: var.$gutter-base;
+    }
+  }
+
+  .custom-card {
+    @include anim.appear;
+    flex-basis: 33.333%;
+    border-radius: var.$border-radius-base;
+    box-shadow: var.$box-shadow-base;
+    padding: var.$gutter-base;
+    text-align: center;
+
+    img {
+      border-radius: var.$border-radius-small;
+      margin-bottom: var.$gutter-medium;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,749 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin-top: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*the animation-timeline property is supported only on Chrome, Edge, Opera, Brave Browser, Chrome(for Android), Samsung Internet, Opera(mobile) and Android Browser*/
+body {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+h1 {
+  font-size: 3.4375rem;
+  line-height: 1.25;
+  margin-bottom: 0.9375rem;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.375rem;
+  }
+}
+
+h2 {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  font-size: 2.375rem;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 2.8125rem;
+  text-align: center;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+h3 {
+  font-size: 1.875rem;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+h4 {
+  font-size: 0.875rem;
+  color: #000;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 1.875rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+footer, .our-team-section, .gallery-section, .testimonials-section, .programs-section, .vision-section, .who-are-we-section, .banner-section .wrapper {
+  padding-block: 2.8125rem;
+}
+@media (max-width: 570px) {
+  footer, .our-team-section, .gallery-section, .testimonials-section, .programs-section, .vision-section, .who-are-we-section, .banner-section .wrapper {
+    padding-block: 1.875rem;
+  }
+}
+
+/*the wrapper mixin contains 4 variables that change. In this project i use 2 scenario wraps, bigger and smaller:
+
+1.The bigger is with 80% width on bigger screens and 100% width from smaller laptops and below and the padding uses the default value that is gutter small. (the width for wrap-tablet uses the values that are used for the smaller laptops because it's the same with the bigger wrap.)
+
+2. The smaller wrap is with width 60% on bigger screens and 70% on smaller laptops and 100% for the tablet screen and the padding does not use the default value, but custom put that is 0 because the width of 70% on smaller laptops. */
+.banner-section {
+  background: linear-gradient(90deg, rgb(0, 0, 0) 20%, rgba(0, 0, 0, 0.5663515406) 56%, rgba(0, 0, 0, 0.3450630252) 67%, rgba(0, 0, 0, 0.2358193277) 77%, rgba(0, 0, 0, 0.1629901961) 87%), url("../images/banner.png") no-repeat top/cover fixed;
+}
+.banner-section .wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (max-width: 1024px) {
+  .banner-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+@media (max-width: 768px) {
+  .banner-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+.banner-section .logo-navbar {
+  margin-bottom: 1.875rem;
+}
+.banner-section .logo-navbar img {
+  width: 100px;
+}
+.banner-section .banner-content {
+  animation: appear 1s forwards;
+  animation-timeline: default;
+  width: 40%;
+  color: #fff;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .banner-section .banner-content {
+    width: 70%;
+  }
+}
+.banner-section .banner-content p {
+  margin-bottom: 1.875rem;
+}
+.banner-section .button {
+  background-color: #192b6c;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0.9375rem;
+  text-transform: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.9375rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in, transform 0.3s ease-in;
+}
+@media (max-width: 768px) {
+  .banner-section .button {
+    font-size: 1rem;
+  }
+}
+.banner-section .button:hover {
+  background-color: #0072ba;
+  color: #000;
+  transform: scale(1.1);
+}
+.banner-section .info-highlight i {
+  color: #0072ba;
+}
+.banner-section .info-highlight p {
+  margin-bottom: 0;
+}
+
+.who-are-we-section .wrapper {
+  width: 80%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem;
+  flex-wrap: nowrap;
+}
+@media (max-width: 1024px) {
+  .who-are-we-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+@media (max-width: 768px) {
+  .who-are-we-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+@media (max-width: 570px) {
+  .who-are-we-section .wrapper {
+    flex-direction: column;
+  }
+}
+.who-are-we-section .content-container {
+  flex-basis: 50%;
+}
+.who-are-we-section .content-container p {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  margin-bottom: 0;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.who-are-we-section .content-container h2 {
+  text-align: left;
+}
+.who-are-we-section .image-container {
+  flex-basis: 50%;
+}
+.who-are-we-section .image-container img {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  border-radius: 20px;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.vision-section .wrapper {
+  width: 60%;
+  margin-inline: auto;
+}
+@media (max-width: 1024px) {
+  .vision-section .wrapper {
+    width: 70%;
+    padding-inline: 0;
+  }
+}
+@media (max-width: 768px) {
+  .vision-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+.vision-section .cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.9375rem;
+  flex-wrap: nowrap;
+}
+@media (max-width: 570px) {
+  .vision-section .cards-container {
+    flex-direction: column;
+  }
+}
+.vision-section .cards-container .custom-card:nth-child(2) {
+  background-color: #e4e4e4;
+}
+.vision-section .custom-card {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  flex-basis: 50%;
+  text-align: center;
+  padding: 0.9375rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.3);
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.vision-section .custom-card i {
+  color: #192b6c;
+  font-size: 1.875rem;
+  margin-bottom: 0.625rem;
+}
+.vision-section .custom-card p {
+  margin-bottom: 0;
+}
+
+.programs-section .wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (max-width: 1024px) {
+  .programs-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+@media (max-width: 768px) {
+  .programs-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+.programs-section .cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.9375rem;
+  flex-wrap: nowrap;
+}
+@media (max-width: 600px) {
+  .programs-section .cards-container {
+    flex-direction: column;
+    gap: 1.875rem;
+  }
+}
+.programs-section .custom-card {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  flex-basis: 33.333%;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.3);
+  padding: 1.875rem;
+  text-align: center;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.programs-section .custom-card img {
+  border-radius: 10px;
+  margin-bottom: 0.9375rem;
+}
+.programs-section .custom-card p {
+  margin-bottom: 0;
+}
+
+.testimonials-section .wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (max-width: 1024px) {
+  .testimonials-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+.testimonials-section .carousel-inner {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  min-height: 30vh;
+  /*min-height so it does not change the height on the carousel inner based on how much text there is*/
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.testimonials-section .testimonial-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.875rem;
+  flex-wrap: nowrap;
+}
+@media (max-width: 768px) {
+  .testimonials-section .testimonial-container {
+    flex-direction: column;
+  }
+}
+.testimonials-section .testimonial-container .inner-testimonial {
+  flex-basis: 50%;
+}
+.testimonials-section .person-info-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-wrap: nowrap;
+}
+.testimonials-section .image-box {
+  flex-basis: 10%;
+}
+.testimonials-section .image-box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.testimonials-section .name-info-box {
+  flex-basis: 90%;
+}
+.testimonials-section .name-info-box p {
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.testimonials-section .name-info-box i {
+  color: #ffac33;
+}
+.testimonials-section .carousel-indicators {
+  position: static;
+  margin-top: 1.875rem;
+  margin-bottom: 0;
+}
+.testimonials-section .carousel-indicators button {
+  background-color: #959595;
+}
+.testimonials-section .carousel-indicators button:active {
+  background-color: #626262;
+}
+
+.gallery-section .wrapper {
+  width: 60%;
+  margin-inline: auto;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .gallery-section .wrapper {
+    width: 70%;
+    padding-inline: 0;
+  }
+}
+@media (max-width: 768px) {
+  .gallery-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+.gallery-section .images-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.3125rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9375rem;
+}
+.gallery-section .image-box {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  flex-basis: calc(25% - 0.3125rem);
+  aspect-ratio: 1;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 1024px) {
+  .gallery-section .image-box {
+    aspect-ratio: 2/2.5;
+  }
+}
+@media (max-width: 768px) {
+  .gallery-section .image-box {
+    aspect-ratio: 16/11;
+  }
+}
+@media (max-width: 570px) {
+  .gallery-section .image-box {
+    flex-basis: calc(50% - 0.3125rem);
+    aspect-ratio: 16/7;
+  }
+}
+.gallery-section .image-box img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+.gallery-section .button {
+  animation: appear 1s forwards;
+  animation-timeline: view(600px 0);
+  background-color: #192b6c;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0.9375rem;
+  text-transform: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.9375rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in, transform 0.3s ease-in;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .gallery-section .button {
+    font-size: 1rem;
+  }
+}
+.gallery-section .button:hover {
+  background-color: #0072ba;
+  color: #000;
+  transform: scale(1.1);
+}
+
+.our-team-section .wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+@media (max-width: 1024px) {
+  .our-team-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+@media (max-width: 768px) {
+  .our-team-section .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+.our-team-section .cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 0.9375rem;
+  flex-wrap: nowrap;
+}
+@media (max-width: 570px) {
+  .our-team-section .cards-container {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+}
+.our-team-section .custom-card {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  flex-basis: 25%;
+  text-align: center;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.our-team-section .custom-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 0.9375rem;
+}
+.our-team-section .custom-card p {
+  font-size: 0.625rem;
+  margin-bottom: 0;
+}
+
+footer {
+  background-color: #e4e4e4;
+}
+footer .wrapper {
+  width: 60%;
+  margin-inline: auto;
+}
+@media (max-width: 1024px) {
+  footer .wrapper {
+    width: 70%;
+    padding-inline: 0;
+  }
+}
+@media (max-width: 768px) {
+  footer .wrapper {
+    width: 100%;
+    padding-inline: 0.625rem;
+  }
+}
+footer h2 {
+  margin-bottom: 0.9375rem;
+}
+footer .subtitle {
+  animation: appear 1s forwards;
+  animation-timeline: view(450px 0);
+  text-align: center;
+  margin-bottom: 2.8125rem;
+  font-size: 0.875rem;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+footer .container-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1.875rem;
+  flex-wrap: nowrap;
+}
+@media (max-width: 570px) {
+  footer .container-box {
+    flex-direction: column;
+    gap: 2.8125rem;
+  }
+}
+footer .content-box {
+  animation: appear 1s forwards;
+  animation-timeline: view(800px 0);
+  flex-basis: 50%;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+footer .content-box ul {
+  margin-bottom: 2.8125rem;
+  padding-left: 0;
+  list-style-type: none;
+}
+footer .content-box li:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+footer .content-box .working-time {
+  color: #bcb2b2;
+  margin-bottom: 2.8125rem;
+}
+footer .content-box .socials-container i {
+  background-color: #bcb2b2;
+  padding: 0.625rem;
+  border-radius: 5px;
+}
+footer .form-box {
+  animation: appear 1s forwards;
+  animation-timeline: view(800px 0);
+  flex-basis: 50%;
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+footer .form-box form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.3125rem;
+  flex-wrap: nowrap;
+}
+footer .form-box input,
+footer .form-box textarea {
+  background-color: #fff;
+  padding: 0.625rem;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+footer .form-box input:focus,
+footer .form-box textarea:focus {
+  outline: 1px solid #000;
+}
+footer .form-box textarea {
+  resize: none;
+  height: 20vh;
+}
+footer .form-box button {
+  background-color: #192b6c;
+  color: #fff;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 0.9375rem;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.9375rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in, color 0.3s ease-in, transform 0.3s ease-in;
+}
+@media (max-width: 768px) {
+  footer .form-box button {
+    font-size: 1rem;
+  }
+}
+footer .form-box button:hover {
+  background-color: #0072ba;
+  color: #000;
+  transform: none;
+}
+footer .form-box .error-message {
+  color: rgb(245, 51, 51);
+}/*# sourceMappingURL=main.css.map */
