@@ -53,7 +53,11 @@ The purpose of **Youth Can** is to create an engaging and professional landing p
 
 ## Demo 🎥
 
-Check out the pictures below for a quick preview of the core features:
+Check out the live demo of the project hosted on **Netlify**:
+
+<a href="https://youth-can-makedonkatochevska.netlify.app/" target="_blank">Live Demo</a>
+
+Or see the pictures below for a quick preview of the core features:
 
 <a href="https://i.imghippo.com/files/zher2006uKw.png" target="_blank">Desktop Version</a>
 <br>
@@ -71,7 +75,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://git.brainster.co/Makedonka.Tochevska-FE21/project1_makedonkatochevska_fe21.git
+   git clone https://github.com/makedonkatochevska/youth_can.git
    ```
 2. Open index.html in your preferred browser to view the landing page.
 
